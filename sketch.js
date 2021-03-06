@@ -120,10 +120,8 @@ function draw() {
 function cityObstacles() {
   if(frameCount % 160 === 0) {
     var obstacle = createSprite(1600,630,10,40);
-    //obstacle.debug = true;
-    obstacle.velocityX = -6
+        obstacle.velocityX = -6   
     
-    //generate random obstacles
     var rand = Math.round(random(1,4));
     switch(rand) {
       case 1: obstacle.addImage(city_obstacle1);
@@ -143,7 +141,36 @@ function cityObstacles() {
     }
      }
 }
-
+function forestObstacles() {
+  if(frameCount % 160 === 0) {
+    var obstacle = createSprite(1600,630,10,40);
+        obstacle.velocityX = -6
+      
+    var rand = Math.round(random(1,2));
+    switch(rand) {
+      case 1: obstacle.addImage(forest_obstacle1);     
+              break;
+      case 2: obstacle.addImage(forest_obstacle2);      
+              break;                  
+      default: break;
+    }
+     }
+}
+function desertObstacles() {
+  if(frameCount % 160 === 0) {
+    var obstacle = createSprite(1600,630,10,40);
+        obstacle.velocityX = -6
+      
+    var rand = Math.round(random(1,2));
+    switch(rand) {
+      case 1: obstacle.addImage(desert_obstacle1);     
+              break;
+      case 2: obstacle.addImage(desert_obstacle2);      
+              break;                  
+      default: break;
+    }
+     }
+}
 function reset(){
   gameState = PLAY;
   gameOver.visible = false;
